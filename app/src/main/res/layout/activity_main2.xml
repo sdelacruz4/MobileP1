@@ -37,7 +37,7 @@
         tools:text="Team B" />
 
     <TextView
-        android:id="@+id/scoreAL"
+        android:id="@+id/scoreA"
         android:layout_width="148dp"
         android:layout_height="126dp"
         android:fontFamily="sans-serif-black"
@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.252" />
 
     <TextView
-        android:id="@+id/scoreBL"
+        android:id="@+id/scoreB"
         android:layout_width="148dp"
         android:layout_height="126dp"
         android:fontFamily="sans-serif-black"
@@ -77,11 +77,11 @@
         android:orientation="horizontal" />
 
     <Button
-        android:id="@+id/three1L_button"
+        android:id="@+id/three1_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:text="@string/three1L_button"
+        android:text="@string/three1_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -90,11 +90,11 @@
         app:layout_constraintVertical_bias="0.476" />
 
     <Button
-        android:id="@+id/two1L_button"
+        android:id="@+id/two1_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:text="@string/two1L_button"
+        android:text="@string/two1_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -103,11 +103,11 @@
         app:layout_constraintVertical_bias="0.614" />
 
     <Button
-        android:id="@+id/free1L_button"
+        android:id="@+id/free1_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:text="@string/free1L_button"
+        android:text="@string/free1_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -116,11 +116,11 @@
         app:layout_constraintVertical_bias="0.772" />
 
     <Button
-        android:id="@+id/three2L_button"
+        android:id="@+id/three2_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:text="@string/three2L_button"
+        android:text="@string/three2_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -129,11 +129,11 @@
         app:layout_constraintVertical_bias="0.476" />
 
     <Button
-        android:id="@+id/two2L_button"
+        android:id="@+id/two2_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:text="@string/two2L_button"
+        android:text="@string/two2_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -142,11 +142,11 @@
         app:layout_constraintVertical_bias="0.614" />
 
     <Button
-        android:id="@+id/free2L_button"
+        android:id="@+id/free2_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:text="@string/free2L_button"
+        android:text="@string/free2_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -155,12 +155,12 @@
         app:layout_constraintVertical_bias="0.775" />
 
     <Button
-        android:id="@+id/resetL_button"
+        android:id="@+id/reset_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:layout_marginEnd="328dp"
         android:orientation="horizontal"
-        android:text="@string/resetL_button"
+        android:text="@string/reset_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.724"

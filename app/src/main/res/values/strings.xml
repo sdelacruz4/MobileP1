@@ -9,11 +9,4 @@
     <string name="two2_button">+2 Points</string>
     <string name="free2_button">Free Throw</string>
     <string name="reset_button">Reset</string>
-    <string name="three1L_button">+3 Points</string>
-    <string name="two1L_button">+2 Points</string>
-    <string name="free1L_button">Free Throw</string>
-    <string name="three2L_button">+3 Points</string>
-    <string name="two2L_button">+2 Points</string>
-    <string name="free2L_button">Free Throw</string>
-    <string name="resetL_button">Reset</string>
 </resources>
