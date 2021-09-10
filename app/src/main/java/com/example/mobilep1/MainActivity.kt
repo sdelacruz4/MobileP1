@@ -173,7 +173,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkWinner(): Int{
-        var status: Int = 0
         if(viewModel.getTeamAScore() >= 25){
             //toggle visibility for a
             if(findViewById<TextView>(R.id.teamAWin).visibility == View.INVISIBLE) {
