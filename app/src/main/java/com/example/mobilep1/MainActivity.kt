@@ -4,6 +4,7 @@ package com.example.mobilep1
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Button
 import android.util.Log
 import android.widget.TextView
@@ -77,6 +78,13 @@ class MainActivity : AppCompatActivity() {
             resetButtonHandler()
         }
 
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        displayA()
+        displayB()
     }
 
     private fun threePointHandler(team: String) {
