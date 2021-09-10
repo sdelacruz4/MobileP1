@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.Button
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 
@@ -83,57 +84,79 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
+        checkWinner()
         displayA()
         displayB()
     }
 
     private fun threePointHandler(team: String) {
-        if (team === "A") {
-            //call function to display points
-            viewModel.updateTeamAScore(3)
-            displayA()
-        } else if (team === "B") {
-            //call function to display points
-            viewModel.updateTeamBScore(3)
-            displayB()
-        } else {
-            Log.e("Team Error", "An invalid team was used")
+        val isOver: Int = checkWinner()
+        if(isOver == 0 || isOver == 1){
+            return
+        }else {
+            if (team === "A") {
+                //call function to display points
+                viewModel.updateTeamAScore(3)
+                displayA()
+            } else if (team === "B") {
+                //call function to display points
+                viewModel.updateTeamBScore(3)
+                displayB()
+            } else {
+                Log.e("Team Error", "An invalid team was used")
+            }
         }
 
     }
 
     private fun twoPointHandler(team: String) {
-        if (team === "A") {
-            //call function to display points
-            viewModel.updateTeamAScore(2)
-            displayA()
-        } else if (team === "B") {
-            //call function to display points
-            viewModel.updateTeamBScore(2)
-            displayB()
-        } else {
-            Log.e("Team Error", "An invalid team was used")
+        val isOver: Int = checkWinner()
+        if(isOver == 0 || isOver == 1){
+            return
+        }else {
+            if (team === "A") {
+                //call function to display points
+                viewModel.updateTeamAScore(2)
+                displayA()
+            } else if (team === "B") {
+                //call function to display points
+                viewModel.updateTeamBScore(2)
+                displayB()
+            } else {
+                Log.e("Team Error", "An invalid team was used")
+            }
         }
 
     }
 
     private fun onePointHandler(team: String) {
-        if (team === "A") {
-            //call function to display points
-            viewModel.updateTeamAScore(1)
-            displayA()
-        } else if (team === "B") {
-            //call function to display points
-            viewModel.updateTeamBScore(1)
-            displayB()
-        } else {
-            Log.e("Team Error", "An invalid team was used")
+        val isOver: Int = checkWinner()
+        if(isOver == 0 || isOver == 1){
+            return
+        }else{
+            if (team === "A") {
+                //call function to display points
+                viewModel.updateTeamAScore(1)
+                displayA()
+            } else if (team === "B") {
+                //call function to display points
+                viewModel.updateTeamBScore(1)
+                displayB()
+            } else {
+                Log.e("Team Error", "An invalid team was used")
+            }
         }
 
     }
 
     private fun resetButtonHandler() {
         viewModel.resetScores()
+        if(findViewById<TextView>(R.id.teamAWin).visibility == View.VISIBLE){
+            toggleVis(findViewById<TextView>(R.id.teamAWin))
+        }
+        else if(findViewById<TextView>(R.id.teamBWin).visibility == View.VISIBLE){
+            toggleVis(findViewById<TextView>(R.id.teamBWin))
+        }
         displayA()
         displayB()
     }
@@ -147,5 +170,35 @@ class MainActivity : AppCompatActivity() {
     private fun displayB(){
         val scoreViewModel: TextView = findViewById<TextView>(R.id.scoreB)
         scoreViewModel.text = viewModel.getTeamBScore().toString()
+    }
+
+    private fun checkWinner(): Int{
+        var status: Int = 0
+        if(viewModel.getTeamAScore() >= 25){
+            //toggle visibility for a
+            if(findViewById<TextView>(R.id.teamAWin).visibility == View.INVISIBLE) {
+                toggleVis(findViewById<TextView>(R.id.teamAWin))
+            }
+            return 1
+        }
+        else if(viewModel.getTeamBScore() >= 25){
+            //toggle visibility for b
+            if(findViewById<TextView>(R.id.teamBWin).visibility == View.INVISIBLE) {
+                toggleVis(findViewById<TextView>(R.id.teamBWin))
+            }
+            return 0
+        }
+        else{
+            return -1
+        }
+
+    }
+
+    private fun toggleVis(item: TextView){
+        if(item.visibility == View.VISIBLE){
+            item.visibility = View.INVISIBLE
+        }else{
+            item.visibility = View.VISIBLE
+        }
     }
 }
